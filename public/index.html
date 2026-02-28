@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mocksta</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Mocksta</div>
+    <div class="sub">fake instagram feed</div>
+  </header>
+
+  <main class="wrap">
+    <section class="composer">
+      <div class="row">
+        <input id="prompt" type="text" placeholder="Describe a post... (leave empty for auto)" />
+
+        <label class="fileBtn" for="ref" title="Pick reference images (optional)">
+          <span class="fileBtnText">References</span>
+          <span id="fileName" class="fileName">none</span>
+        </label>
+        <input id="ref" type="file" accept="image/*" multiple />
+
+        <button id="genBtn" type="button">Generate</button>
+      </div>
+
+      <div class="refRow">
+        <button id="setRefBtn" class="ghostBtn" type="button">Set as default</button>
+        <button id="clearRefBtn" class="ghostBtn" type="button">Clear default</button>
+        <div id="refStatus" class="refStatus">Default references: none</div>
+      </div>
+
+      <div class="hint">
+        Pick 1–8 reference images. If you set defaults, they're reused every time until cleared. One-off selected refs override defaults for that run.
+      </div>
+
+      <div id="status" class="status"></div>
+    </section>
+
+    <section id="feed" class="feed"></section>
+  </main>
+
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
